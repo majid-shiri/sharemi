@@ -26,7 +26,7 @@ const CreatePin = ({user}) => {
       setWrongImageType(false);
       setLoading(true);
       client.assets
-       .upload('image',e.target.files[0] ,{contentType: type,filename:name})
+       .upload('image',e.target.files[0] ,{contentType: type, filename:name})
        .then((document)=>{
         setImageAsset(document);
         setLoading(false);
@@ -48,7 +48,7 @@ const CreatePin = ({user}) => {
         destination,
         image:{
            _type:'image',
-           assets:{
+           asset:{
             _type:'reference',
             _ref: imageAsset?._id,
            }
@@ -129,7 +129,7 @@ const CreatePin = ({user}) => {
                 className='w-10 h-10 rounded-full' 
                 alt="user-profile" 
               />
-               <p className='font-bold'>{user.username}</p>
+               <p className='font-bold'>{user.userName}</p>
              </div>
           )}
           <input 
